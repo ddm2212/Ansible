@@ -1,0 +1,17 @@
+---
+ - name: Create & Mangage User
+   hosts: all
+   tasks:
+     - name: Crete user account of dnyanesh
+       user:
+         name: dnyanesh
+         state: present
+         uid: 2004
+         comment: morefamily
+     - name: Create Moregrp
+       group:
+         name: moregrp
+         state: present
+     - name: Adding dnyanesh to moregrp member
+       command: gpasswd -M  dnyanesh moregrp
+
