@@ -1,0 +1,17 @@
+---
+ - name: Manage File and folders
+   hosts: all
+   tasks:
+     - name: Create mumbai folder
+       file:
+         path: /home/itadmin/mumbai
+         state: directory
+     - name: create a file hello
+       file:
+         path: /home/itadmin/mumbai/hello
+         state: touch
+     - name : writing a line to hello file
+       lineinfile:
+         path: /home/itadmin/mumbai/hello
+         line: "welcome to dnyaneswar more automation world"
+    
