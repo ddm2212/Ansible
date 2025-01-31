@@ -1,3 +1,5 @@
+# Client nodes for Ansible 
+
 #!/bin/bash
 yum update all -y                 #updating all package with remote repository
 useradd itadmin 			#adding a common user to all system
@@ -7,13 +9,6 @@ echo "itadmin  ALL=(ALL)   NOPASSWD: ALL" >> /etc/sudoers                     #p
 sed s'/PasswordAuthentication no/PasswordAuthentication yes/' -i /etc/ssh/sshd_config    #enable password authentication
 echo "PermitRootLogin yes" >> /etc/ssh/sshd_config     #allow root `
 systemctl restart sshd 
-
-
-# temp id of all node
-#192.168.4.220 node1
-#192.168.7.15 node2
-#192.168.6.136 node3
-
 
 
 #establising the Ansible Server
